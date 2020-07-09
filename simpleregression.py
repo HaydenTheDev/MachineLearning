@@ -23,6 +23,12 @@ x_train, x_test, y_train, y_test = train_test_split(x, y,
 
 #  Training the Simple Linear Regression model on the Training set
 
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(x_train, y_train)
+print(x_train)
+print(y_train)
+
 #  Predicting the Test set results
 
 #  Visualizing the Training set results
