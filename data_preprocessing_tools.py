@@ -26,14 +26,23 @@ ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])],
                        remainder='passthrough')
 x = np.array(ct.fit_transform(x))
 print(x)
+
 # Encoding the Independent Variable
+# Encoding the Dependent Variable
 from sklearn.preprocessing import LabelEncoder
 lb = LabelEncoder()
 y = lb.fit_transform(y)
 print(y)
-# Encoding the Dependent Variable
-
 
 # Splitting the dataset into the Training set and Test set
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test = train_test_split(x, y,
+                                                    test_size=0.2,
+                                                    random_state=1)
+print(x_train)
+print(x_test)
+print(y_train)
+print(x_test)
+
 
 # Feature Scaling
